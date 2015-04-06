@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # share this project under /home/vagrant/vagrant-ubuntu-oracle-xe
   config.vm.synced_folder ".", "/home/vagrant/vagrant-ubuntu-oracle-xe", :mount_options => ["dmode=777","fmode=666"]
-  
+
   # Forward Oracle port
   config.vm.network :forwarded_port, guest: 1521, host: 1521
 
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   end
 
   # This is just an example, adjust as needed
-  config.vm.provision :shell, :inline => "echo \"America/New_York\" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata"
+  config.vm.provision :shell, :inline => "echo \"Asia/Dhaka\" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata"
 
   config.vbguest.auto_update = false
 
